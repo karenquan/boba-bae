@@ -1,0 +1,50 @@
+@import "./main.scss";
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 2;
+  padding: 15px 0 0;
+
+  @media #{$tablet} {
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  ul {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  li {
+    display: inline-block;
+    height: 32px;
+  }
+
+  img {
+    width: 15px;
+    vertical-align: middle;
+  }
+
+  a {
+    display: inline-block;
+    font-family: $base-font;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+
+    &:hover {
+      color: $rose-gold;
+    }
+  }
+
+  span {
+    display: inline-block;
+    padding: 5px 0 0 5px;
+    vertical-align: middle;
+  }
+}

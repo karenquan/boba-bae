@@ -1,0 +1,27 @@
+@import "./main.scss";
+
+.no-boba-wrap {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+
+  .no-boba-inner {
+    p {
+      //   margin: 0 0 10px;
+      font-family: $base-font;
+      font-size: 0.9em;
+      letter-spacing: 0.1em;
+      line-height: 2em;
+
+      span {
+        color: $rose-gold;
+      }
+    }
+
+    img {
+      display: inline-block;
+      margin: 0 0 15px;
+      width: 50px;
+    }
+  }
+}
