@@ -101,6 +101,7 @@ body,
     width: 90%;
     vertical-align: bottom;
     text-align: center;
+    @include animation(fadeIn 1.5s);
 
     .logo {
       display: inline-block;
