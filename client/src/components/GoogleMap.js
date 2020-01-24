@@ -111,8 +111,8 @@ class GoogleMap extends Component {
   // Add Google Map script & initialize map
   addMap = () => {
     if (!window.google) {
+      // Get Google Map API key
       API.getGoogleMapKey().then(result => {
-        console.log("gmap", result);
         var s = document.createElement("script");
         s.type = "text/javascript";
         s.src = `https://maps.google.com/maps/api/js?key=${result.key}`;
@@ -127,21 +127,6 @@ class GoogleMap extends Component {
     } else {
       this.initMap();
     }
-
-    // if (!window.google) {
-    //   var s = document.createElement("script");
-    //   s.type = "text/javascript";
-    //   s.src = `https://maps.google.com/maps/api/js?key=${process.env.REACT_APP_GOOGLEMAP_API}`;
-    //   var x = document.getElementsByTagName("script")[0];
-    //   x.parentNode.insertBefore(s, x);
-    //   // Below is important.
-    //   //We cannot access google.maps until it's finished loading
-    //   s.addEventListener("load", e => {
-    //     this.initMap();
-    //   });
-    // } else {
-    //   this.initMap();
-    // }
   };
 
   componentDidMount() {
