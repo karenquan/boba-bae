@@ -26,7 +26,6 @@ class Search extends Component {
 
   componentDidMount() {
     this.executeNewSearch(this.state.searchLocation);
-    console.log("component did mount", this.state);
   }
 
   // Search box handler
@@ -81,6 +80,7 @@ class Search extends Component {
           },
           () => {
             // Scroll page to top
+            console.log("results of api call", results.data);
             helpers.scrollPageToTop("auto");
             // Build pagination indexes if more than 1 page
             if (total > 1) {
