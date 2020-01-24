@@ -43,7 +43,6 @@ class Home extends Component {
     return (
       <div className="home-wrap">
         <div className="home-intro v-align-rel">
-          <p className="App-intro">{this.state.data}</p>
           <img src={bobaSvg} alt="boba cup" className="logo" />
           <h1>Boba Bae</h1>
           <h2>Let's get boba!</h2>
