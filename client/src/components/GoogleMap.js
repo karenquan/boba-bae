@@ -112,6 +112,7 @@ class GoogleMap extends Component {
   addMap = () => {
     if (!window.google) {
       API.getGoogleMapKey().then(result => {
+        console.log("gmap", result);
         var s = document.createElement("script");
         s.type = "text/javascript";
         s.src = `https://maps.google.com/maps/api/js?key=${result.key}`;
