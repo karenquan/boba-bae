@@ -54,6 +54,7 @@ class Search extends Component {
   // Execute new search
   executeNewSearch = location => {
     this.setState({ loading: true });
+    console.log("got into execute search", location);
 
     API.getBusinesses(location, 0)
       .then(results => {
