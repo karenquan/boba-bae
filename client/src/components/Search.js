@@ -54,7 +54,6 @@ class Search extends Component {
   // Execute new search
   executeNewSearch = location => {
     this.setState({ loading: true });
-    console.log("got into execute search", location);
 
     API.getBusinesses(location, 0)
       .then(results => {
@@ -81,7 +80,6 @@ class Search extends Component {
           },
           () => {
             // Scroll page to top
-            console.log("results of api call", results.data);
             helpers.scrollPageToTop("auto");
             // Build pagination indexes if more than 1 page
             if (total > 1) {
