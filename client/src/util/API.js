@@ -26,7 +26,6 @@ const getBusinesses = async (location, offset) => {
     throw Error(body.message);
   }
 
-  console.log("get businesses api call", body);
   return body;
 };
 
