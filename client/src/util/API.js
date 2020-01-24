@@ -29,4 +29,12 @@ const getBusinesses = async (location, offset) => {
   return body;
 };
 
-export { getBusinesses };
+const getGoogleMapKey = async () => {
+  const response = await fetch("/api/googleMapKey");
+
+  const body = await response.json();
+
+  return body;
+};
+
+export { getBusinesses, getGoogleMapKey };

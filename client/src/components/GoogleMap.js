@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as helpers from "../util/helpers";
+import * as API from "../util/API";
 import YelpLogo from "../images/yelp-logo.png";
 import "../styles/google-map.scss";
 
@@ -110,19 +111,36 @@ class GoogleMap extends Component {
   // Add Google Map script & initialize map
   addMap = () => {
     if (!window.google) {
-      var s = document.createElement("script");
-      s.type = "text/javascript";
-      s.src = `https://maps.google.com/maps/api/js?key=${process.env.REACT_APP_GOOGLEMAP_API}`;
-      var x = document.getElementsByTagName("script")[0];
-      x.parentNode.insertBefore(s, x);
-      // Below is important.
-      //We cannot access google.maps until it's finished loading
-      s.addEventListener("load", e => {
-        this.initMap();
+      API.getGoogleMapKey().then(result => {
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.src = `https://maps.google.com/maps/api/js?key=${result.key}`;
+        var x = document.getElementsByTagName("script")[0];
+        x.parentNode.insertBefore(s, x);
+        // Below is important.
+        //We cannot access google.maps until it's finished loading
+        s.addEventListener("load", e => {
+          this.initMap();
+        });
       });
     } else {
       this.initMap();
     }
+
+    // if (!window.google) {
+    //   var s = document.createElement("script");
+    //   s.type = "text/javascript";
+    //   s.src = `https://maps.google.com/maps/api/js?key=${process.env.REACT_APP_GOOGLEMAP_API}`;
+    //   var x = document.getElementsByTagName("script")[0];
+    //   x.parentNode.insertBefore(s, x);
+    //   // Below is important.
+    //   //We cannot access google.maps until it's finished loading
+    //   s.addEventListener("load", e => {
+    //     this.initMap();
+    //   });
+    // } else {
+    //   this.initMap();
+    // }
   };
 
   componentDidMount() {

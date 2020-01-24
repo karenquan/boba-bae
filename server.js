@@ -6,11 +6,12 @@ const path = require("path");
 
 require("dotenv").config();
 
-const API_URL = "https://api.yelp.com/v3/businesses/search?term=boba";
-const API_KEY = process.env.YELP_API;
+const YELP_API_URL = "https://api.yelp.com/v3/businesses/search?term=boba";
+const YELP_API_KEY = process.env.YELP_API;
+const GOOGLE_MAP_API_KEY = process.env.GOOGLEMAP_API;
 
 let headers = {
-  Authorization: `Bearer ${API_KEY}`
+  Authorization: `Bearer ${YELP_API_KEY}`
 };
 
 // Console.log that server is up and running
@@ -18,7 +19,7 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 
 // GET boba businesses by location and offset
 app.get("/api/businesses", (req, res) => {
-  let url = `${API_URL}&offset=${req.query.offset}&location=${req.query.location}`;
+  let url = `${YELP_API_URL}&offset=${req.query.offset}&location=${req.query.location}`;
   fetch(url, { method: "GET", headers: headers })
     .then(res => res.json())
     .then(data => {
@@ -27,6 +28,12 @@ app.get("/api/businesses", (req, res) => {
     .catch(err => {
       res.send(err);
     });
+});
+
+// GET Google Maps link with API key
+app.get("/api/googleMapKey", (req, res) => {
+  let key = GOOGLE_MAP_API_KEY;
+  res.send({ key: key });
 });
 
 // Deployment
