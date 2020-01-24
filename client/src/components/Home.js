@@ -50,7 +50,6 @@ class Home extends Component {
             <label htmlFor="location">Search</label>
             <input
               type="text"
-              autoFocus
               name="location"
               value={this.state.location}
               onChange={this.handleLocationInput}

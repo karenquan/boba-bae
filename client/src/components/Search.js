@@ -234,7 +234,6 @@ class Search extends Component {
                 <label htmlFor="location">find boba in</label>
                 <input
                   type="text"
-                  autoFocus
                   name="location"
                   value={this.state.searchLocation}
                   onChange={this.handleLocationInput}
