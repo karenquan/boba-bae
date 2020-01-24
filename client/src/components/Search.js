@@ -26,6 +26,7 @@ class Search extends Component {
 
   componentDidMount() {
     this.executeNewSearch(this.state.searchLocation);
+    console.log("component did mount", this.state);
   }
 
   // Search box handler

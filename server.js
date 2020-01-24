@@ -22,6 +22,7 @@ app.get("/api/businesses", (req, res) => {
   fetch(url, { method: "GET", headers: headers })
     .then(res => res.json())
     .then(data => {
+      console.log("RESULTS", data);
       res.send({ data });
     })
     .catch(err => {
