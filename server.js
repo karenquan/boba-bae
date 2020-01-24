@@ -30,7 +30,7 @@ app.get("/api/businesses", (req, res) => {
     });
 });
 
-// GET Google Maps link with API key
+// GET Google Maps API key
 app.get("/api/googleMapKey", (req, res) => {
   let key = GOOGLE_MAP_API_KEY;
   res.send({ key: key });
