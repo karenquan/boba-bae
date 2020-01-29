@@ -17,6 +17,10 @@
   ul {
     width: 95%;
     margin: 0 auto;
+
+    @media #{$tablet} {
+      width: 90%;
+    }
   }
 
   li {
