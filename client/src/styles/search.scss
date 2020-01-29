@@ -13,8 +13,7 @@
   }
 
   .search-header-inner {
-    max-width: 1200px;
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
     padding: 0 0 20px;
 
@@ -108,8 +107,7 @@
   position: relative;
   top: 140px;
   margin: 0 auto;
-  max-width: 1200px;
-  width: 90%;
+  width: 95%;
 
   @media #{$tablet} {
     top: 70px;
